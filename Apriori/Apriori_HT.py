@@ -253,47 +253,61 @@ if __name__ == '__main__':
 	import time
 
 
-	def loadDataSet(fn):
-		if fn == 'BreadBasket_DMS.csv':  # Kaggle Data
-			bakery_data = pd.read_csv(fn)
-			bakery_data['Date Time'] = bakery_data['Date'] + " " + bakery_data['Time']
-			bakery_data = bakery_data.drop(['Date', 'Time'], axis=1)
-			bakery_data = bakery_data.drop(['Date Time'], axis=1)
-			bakery_data = bakery_data[~bakery_data['Item'].str.contains('NONE')]
+	def loadFromKaggle():
 
-			tdl = []
-			for i in range(1, bakery_data.Transaction.count() + 1):
-				tdf = bakery_data[bakery_data.Transaction == i]
-				l = set()
-				for j in range(0, tdf.Transaction.count()):
-					l.add(tdf.Item.iloc[j])
-				if len(l) > 0:
-					tdl.append(list(l))
-				else:
-					tdl.append(None)
+		bakery_data = pd.read_csv('BreadBasket_DMS.csv', encoding='utf-8')
+		bakery_data['Date Time'] = bakery_data['Date'] + " " + bakery_data['Time']
+		bakery_data = bakery_data.drop(['Date', 'Time'], axis=1)
+		bakery_data = bakery_data.drop(['Date Time'], axis=1)
+		bakery_data = bakery_data[~bakery_data['Item'].str.contains('NONE')]
 
-			col = ['items']
-			TDB = pd.DataFrame({"items": tdl}, columns=col)
-			TDB = TDB.dropna()
-			return TDB['items'].tolist()
-		else:
-			# read data from txt file
-			with open(fn) as f:
-				content = f.readlines()
+		tdl = []
+		for i in range(1, bakery_data.Transaction.count() + 1):
+			tdf = bakery_data[bakery_data.Transaction == i]
+			l = set()
+			for j in range(0, tdf.Transaction.count()):
+				l.add(tdf.Item.iloc[j])
+			if len(l) > 0:
+				tdl.append(list(l))
+			else:
+				tdl.append(None)
 
-			content = [x.strip() for x in content]
+		col = ['items']
+		TDB = pd.DataFrame({"items": tdl}, columns=col)
+		TDB = TDB.dropna()
+		return TDB['items'].tolist()
+	def loadFromIbm():
+		# read data from Ibm
+		with open('data', encoding='utf-8') as f:
+			content = f.readlines()
 
-			Transaction = []  # to store transaction
-			Frequent_items_value = {}  # to store all frequent item sets
+		content = [x.strip() for x in content]
 
-			# to fill values in transaction from txt file
-			for i in range(0, len(content)):
-				Transaction.append(content[i].split())
-			return Transaction
+		Transaction = []  # to store transaction
+		Frequent_items_value = {}  # to store all frequent item sets
+
+		# to fill values in transaction from txt file
+		Transaction = {}
+		Transaction
+		for i in range(0, len(content)):
+			rowd = content[i].split(' ')
+			rowd = [r for r in rowd if r != '']
+			rowd = rowd[1:]
+			if Transaction.get(rowd[0], None) == None:
+				Transaction[rowd[0]] = [rowd[1]]
+			else:
+				Transaction[rowd[0]].append(rowd[1])
+		# print(type(list(Transaction.values())))
+		return list(Transaction.values())
 
 
-	# python Apriori_HT.py Small_Data.txt 3 3 5
-	fn = str(sys.argv[1])  # Small_Data.txt
+
+
+
+	# cd D:\WorkSpace\PythonWorkSpace\Apriori
+	# D:
+	# python Apriori_HT.py ibm 3 3 5
+	fn = str(sys.argv[1])
 	minSup = int(sys.argv[2])  # 3
 	max_leaf_count = int(sys.argv[3])  # 3
 	max_child_count = int(sys.argv[4])  # 5
@@ -302,8 +316,10 @@ if __name__ == '__main__':
 	starttime = time.time()
 
 	Frequent_items_value = {}  # to store all frequent item sets
-	# fn = 'Small_Data.txt'
-	Transaction = loadDataSet(fn)
+
+	if fn == 'ibm':
+		Transaction = loadFromIbm()
+
 	Transaction_len = len(Transaction)
 
 	L1 = frequent_one_item(Transaction, minSup)

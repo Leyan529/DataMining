@@ -4,6 +4,7 @@ import time
 import sys
 import pandas as pd
 import numpy as np
+import re
 
 
 class Item:
@@ -280,6 +281,7 @@ def getAllRule(apriori, ls, minConf):  # 列印全部規則
 		for rule in rules:
 			print(rule)
 
+
 def getPatterns(ls):
 	new_ls = {}
 	for i in range(2, ls.size() + 1):
@@ -299,55 +301,72 @@ def getPatterns(ls):
 		[print("Items:{}".format(items)) for items in l]
 		print()
 
-if __name__=='__main__':
 
-	def loadDataSet(fn):
-		if fn == 'BreadBasket_DMS.csv':  # Kaggle Data
-			bakery_data = pd.read_csv(fn, encoding='utf-8')
-			bakery_data['Date Time'] = bakery_data['Date'] + " " + bakery_data['Time']
-			bakery_data = bakery_data.drop(['Date', 'Time'], axis=1)
-			bakery_data = bakery_data.drop(['Date Time'], axis=1)
-			bakery_data = bakery_data[~bakery_data['Item'].str.contains('NONE')]
+if __name__ == '__main__':
 
-			tdl = []
-			for i in range(1, bakery_data.Transaction.count() + 1):
-				tdf = bakery_data[bakery_data.Transaction == i]
-				l = set()
-				for j in range(0, tdf.Transaction.count()):
-					l.add(tdf.Item.iloc[j])
-				if len(l) > 0:
-					tdl.append(list(l))
-				else:
-					tdl.append(None)
+	def loadFromKaggle():
 
-			col = ['items']
-			TDB = pd.DataFrame({"items": tdl}, columns=col)
-			TDB = TDB.dropna()
-			return TDB['items'].tolist()
-		else:
-			# read data from txt file
-			with open(fn,encoding='utf-8') as f:
-				content = f.readlines()
+		bakery_data = pd.read_csv('BreadBasket_DMS.csv', encoding='utf-8')
+		bakery_data['Date Time'] = bakery_data['Date'] + " " + bakery_data['Time']
+		bakery_data = bakery_data.drop(['Date', 'Time'], axis=1)
+		bakery_data = bakery_data.drop(['Date Time'], axis=1)
+		bakery_data = bakery_data[~bakery_data['Item'].str.contains('NONE')]
 
-			content = [x.strip() for x in content]
+		tdl = []
+		for i in range(1, bakery_data.Transaction.count() + 1):
+			tdf = bakery_data[bakery_data.Transaction == i]
+			l = set()
+			for j in range(0, tdf.Transaction.count()):
+				l.add(tdf.Item.iloc[j])
+			if len(l) > 0:
+				tdl.append(list(l))
+			else:
+				tdl.append(None)
 
-			Transaction = []  # to store transaction
-			Frequent_items_value = {}  # to store all frequent item sets
+		col = ['items']
+		TDB = pd.DataFrame({"items": tdl}, columns=col)
+		TDB = TDB.dropna()
+		return TDB['items'].tolist()
+	def loadFromIbm():
+		# read data from Ibm
+		with open('data', encoding='utf-8') as f:
+			content = f.readlines()
 
-			# to fill values in transaction from txt file
-			for i in range(0, len(content)):
-				Transaction.append(content[i].split())
-			return Transaction
+		content = [x.strip() for x in content]
 
-	# python Apriori.py BreadBasket_DMS.csv 3 0.6
+		Transaction = []  # to store transaction
+		Frequent_items_value = {}  # to store all frequent item sets
+
+		# to fill values in transaction from txt file
+		Transaction = {}
+		Transaction
+		for i in range(0, len(content)):
+			rowd = content[i].split(' ')
+			rowd = [r for r in rowd if r != '']
+			rowd = rowd[1:]
+			if Transaction.get(rowd[0], None) == None:
+				Transaction[rowd[0]] = [rowd[1]]
+			else:
+				Transaction[rowd[0]].append(rowd[1])
+		# print(type(list(Transaction.values())))
+		return list(Transaction.values())
+
+
+	# cd D:\WorkSpace\PythonWorkSpace\Apriori
+	# D:
+	# python Apriori.py ibm 2 0.6
+
 	fn = str(sys.argv[1])  # BreadBasket_DMS.csv
 	minSup = int(sys.argv[2])  # 3
 	minConf = float(sys.argv[3])  # 0.6
-	print('fileName = {} ,minSup= {} , minConf={}'.format(fn,minSup,minConf))
+	print('fileName = {} ,minSup= {} , minConf={}'.format(fn, minSup, minConf))
 
 	starttime = time.time()
-	# fn = 'BreadBasket_DMS.csv'
-	dataSet = loadDataSet(fn)
+	if fn == 'kaggle':
+		dataSet = loadFromKaggle()
+	elif fn == 'ibm':
+		dataSet = loadFromIbm()
+
 	apriori = Apriori(dataSet, min_supp=minSup)
 	ls = apriori.do()
 	endtime = time.time()
