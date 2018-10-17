@@ -88,6 +88,7 @@ def updateFrequenctNodeTable(headFrequentNode, targetNode):
 
 def mining_FPTree(frequenctNodeTable, suffix, frequentPatterns, minSupport):
 	# for each item in frequenctNodeTable, find conditional suffix path, create conditional fptree, then iterate until there is only one element in conditional fptree
+	if (frequenctNodeTable == None): return
 	frequenctItems = [v[0] for v in sorted(frequenctNodeTable.items(),
 										   key=lambda v: v[1][0])]  # 將frequenctNodeTable以升序排序，從low frequent開始mining
 	if (len(frequenctItems) == 0): return
@@ -97,7 +98,6 @@ def mining_FPTree(frequenctNodeTable, suffix, frequentPatterns, minSupport):
 		newSuffix.add(frequenctItem)  # 加入一個擁有最低出現次數的Suffix item作為newSuffix
 		support = frequenctNodeTable[frequenctItem][0]  # 逐一取得Suffix item的support
 		frequentPatterns[frozenset(newSuffix)] = support  # 逐一取得Suffix item的support，並將其一一加入到frequentPatterns
-		print(frequentPatterns)
 
 		suffixPath = getSuffixPath(frequenctNodeTable, frequenctItem)  # Find suffix patterns to the frequenctItem
 		if (suffixPath != {}):
@@ -183,7 +183,7 @@ def getpatterns(pattern):
 	for i in range(1, maxVal + 10):
 		patterns = dictpattern[str(i)]
 		if len(patterns) > 0:
-			print("{}-items set".format(str(i)))
+			print("{}-items set :{}".format(str(i),len(patterns)))
 			[print("items:{} , support:{} ".format(set(item[0]), item[1])) for item in patterns]
 			print()
 
@@ -241,7 +241,7 @@ if __name__ == '__main__':
 
 	# cd D:\WorkSpace\PythonWorkSpace\Apriori
 	# D:
-	# python FP-Growth.py ibm 3 0.6
+	# python FP-Growth.py ibm 10 0.6
 	fn = str(sys.argv[1])  # BreadBasket_DMS.csv
 	minSup = int(sys.argv[2])  # 3
 	minConf = float(sys.argv[3])  # 0.6
@@ -264,13 +264,12 @@ if __name__ == '__main__':
 	rules = []
 	endtime = time.time()
 	print("fptree:")
-	print("\nTime Taken is: {}\n".format((endtime - starttime) * 1000))
+	print("\nTime Taken is: {0:.2f}ms \n".format((endtime - starttime)))
 
 	print("frequent patterns:")
-	# getpatterns(frequentPatterns)
+	getpatterns(frequentPatterns)
 
-	print(frequentPatterns)
 	print("association rules:")
-	# rulesGenerator(frequentPatterns, minConf, rules)
-	# rules = [rule for rule in rules if rule != None]
-	# [print('Rules:{}-->{}, confidence:{}'.format(set(r[0]), set(r[1]), r[2])) for r in rules]
+	rulesGenerator(frequentPatterns, minConf, rules)
+	rules = [rule for rule in rules if rule != None]
+	[print('Rules:{}-->{}, confidence:{}'.format(set(r[0]), set(r[1]), r[2])) for r in rules]

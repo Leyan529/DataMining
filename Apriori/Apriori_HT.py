@@ -1,7 +1,7 @@
 import itertools
 import time
 import sys
-
+import copy
 
 # function to get frequent one itemset
 def frequent_one_item(Transaction, min_support):
@@ -226,14 +226,23 @@ def apriori(L1, min_support, max_leaf_count=3, max_child_count=5):
 		L.append(lk)
 		k = k + 1  # Ck,Lk提升一階
 	end = time.time()
-	return L, (end - start) * 1000
+	return L, (end - start)
 
 
 def generateL1(L1, Transaction_len):
 	print("1-itemsets :{}".format(len(L1.items())))
-	for key, value in L1.items():
-		key = str(key).replace('(', '[').replace(')', ']')
-		print("Items: {}, Support :{}".format(key, value))
+	cpL1 = copy.deepcopy(L1)
+
+	for key, value in cpL1.items():
+		# key = str(key).replace('(', '[').replace(')', ']')
+		# key = int(key)
+		item = 0
+		for i in range(0,len(key)):
+			item = item + int(key[i])
+			item*=10
+			L1[item] = value
+		del L1[key]
+		print("Items: {} , Support :{}".format([item], value))
 
 
 def generateLn(L_value):
@@ -245,7 +254,7 @@ def generateLn(L_value):
 		else:
 			print()
 			print("{}-itemsets :{}".format((i), len(L)))
-			[print('Items: {}'.format(itemSet)) for itemSet in L]
+			[print('Items: {} , Support:{}'.format(itemSet,Frequent_items_value[tuple(itemSet)])) for itemSet in L]
 
 
 if __name__ == '__main__':
@@ -306,7 +315,7 @@ if __name__ == '__main__':
 
 	# cd D:\WorkSpace\PythonWorkSpace\Apriori
 	# D:
-	# python Apriori_HT.py ibm 3 3 5
+	# python Apriori_HT.py ibm 10 3 5
 	fn = str(sys.argv[1])
 	minSup = int(sys.argv[2])  # 3
 	max_leaf_count = int(sys.argv[3])  # 3
@@ -322,6 +331,7 @@ if __name__ == '__main__':
 
 	Transaction_len = len(Transaction)
 
+	print("All frequent itemsets with their support count:")
 	L1 = frequent_one_item(Transaction, minSup)
 	generateL1(Frequent_items_value, Transaction_len)
 
@@ -337,6 +347,4 @@ if __name__ == '__main__':
 	L_value, time_taken = apriori(L1, minSup, max_leaf_count, max_child_count)
 	generateLn(L_value)
 
-	print("\nTime Taken is: {}\n".format(time_taken))
-	print("All frequent itemsets with their support count:")
-	[print('{} , Support:{}'.format(list(ft), count)) for ft, count in Frequent_items_value.items()]
+	print("\nTime Taken is: {0:.3f} ms\n".format(time_taken))

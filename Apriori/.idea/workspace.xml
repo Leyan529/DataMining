@@ -12,17 +12,28 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Apriori$Apriori.coverage" NAME="Apriori Coverage Results" MODIFIED="1539597129465" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="FP-Growth.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/FP-Growth.py">
+      <file leaf-file-name="Apriori.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Apriori.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-655">
-              <caret line="164" column="31" lean-forward="true" selection-start-line="164" selection-start-column="31" selection-end-line="164" selection-end-column="31" />
+            <state relative-caret-position="261">
+              <caret line="161" column="48" lean-forward="true" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <element signature="e#7690#8421#0" expanded="false" />
-                <element signature="e#8446#9106#0" expanded="false" />
+                <element signature="e#2#13#0" expanded="true" />
+                <element signature="e#3361#4092#0" expanded="false" />
+                <element signature="e#4117#4777#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -39,10 +50,8 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hash</find>
       <find>loadDataSet</find>
       <find>values</find>
-      <find>Frequent_items_value</find>
       <find>apriori</find>
       <find>Transaction</find>
       <find>Transaction1</find>
@@ -68,7 +77,9 @@
       <find>a</find>
       <find>conf</find>
       <find>content</find>
+      <find>Frequent_items_value</find>
       <find>print</find>
+      <find>sup</find>
     </findStrings>
     <replaceStrings>
       <replace>print(</replace>
@@ -90,9 +101,10 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/Apriori_Ver2.py" />
         <option value="$PROJECT_DIR$/Apriori_Ver1.py" />
-        <option value="$PROJECT_DIR$/Apriori.py" />
-        <option value="$PROJECT_DIR$/Apriori_HT.py" />
         <option value="$PROJECT_DIR$/FP-Growth.py" />
+        <option value="$PROJECT_DIR$/Apriori_HT.py" />
+        <option value="$PROJECT_DIR$/qqq.py" />
+        <option value="$PROJECT_DIR$/Apriori.py" />
       </list>
     </option>
   </component>
@@ -103,10 +115,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="51" />
-    <option name="y" value="125" />
-    <option name="width" value="1296" />
-    <option name="height" value="1000" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1784" />
+    <option name="height" value="968" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -139,7 +151,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -152,6 +163,7 @@
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -190,7 +202,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Apriori" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Apriori.py" />
+      <option name="SCRIPT_NAME" value="D:\WorkSpace\PythonWorkSpace\Apriori\Apriori_mod.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -215,13 +227,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1784" height="968" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14902808" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22705883" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328877" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -235,7 +248,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
@@ -248,19 +260,65 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/FP-Growth.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5544">
+          <caret line="242" column="36" lean-forward="false" selection-start-line="242" selection-start-column="36" selection-end-line="242" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8372">
+          <caret line="304" column="38" lean-forward="false" selection-start-line="304" selection-start-column="38" selection-end-line="304" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apriori_HT.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5796">
+          <caret line="256" column="32" lean-forward="false" selection-start-line="256" selection-start-column="32" selection-end-line="256" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#16#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FP-Growth.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FP-Growth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -271,10 +329,10 @@
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="10" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -284,9 +342,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -297,23 +355,19 @@
           <caret line="301" column="18" lean-forward="false" selection-start-line="301" selection-start-column="18" selection-end-line="301" selection-end-column="18" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5376">
           <caret line="196" column="29" lean-forward="false" selection-start-line="196" selection-start-column="29" selection-end-line="196" selection-end-column="29" />
-          <folding>
-            <element signature="e#2#13#0" expanded="true" />
-            <element signature="e#8308#9039#0" expanded="false" />
-            <element signature="e#9062#9722#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -322,9 +376,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -334,9 +388,9 @@
         <state relative-caret-position="1428">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -347,10 +401,10 @@
           <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -360,9 +414,9 @@
         <state relative-caret-position="4256">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -373,10 +427,10 @@
           <caret line="82" column="58" lean-forward="false" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -386,9 +440,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -399,10 +453,10 @@
           <caret line="82" column="58" lean-forward="true" selection-start-line="82" selection-start-column="58" selection-end-line="82" selection-end-column="58" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -412,9 +466,9 @@
         <state relative-caret-position="1428">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -425,10 +479,10 @@
           <caret line="230" column="16" lean-forward="true" selection-start-line="230" selection-start-column="16" selection-end-line="230" selection-end-column="16" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -438,9 +492,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -451,15 +505,15 @@
           <caret line="272" column="24" lean-forward="false" selection-start-line="272" selection-start-column="24" selection-end-line="272" selection-end-column="24" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -480,7 +534,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
           <caret line="126" column="19" lean-forward="false" selection-start-line="126" selection-start-column="19" selection-end-line="126" selection-end-column="19" />
@@ -493,9 +547,9 @@
         <state relative-caret-position="-417">
           <caret line="152" column="0" lean-forward="true" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -506,10 +560,10 @@
           <caret line="235" column="28" lean-forward="true" selection-start-line="235" selection-start-column="28" selection-end-line="235" selection-end-column="28" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -519,9 +573,9 @@
         <state relative-caret-position="1581">
           <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -532,10 +586,10 @@
           <caret line="280" column="19" lean-forward="false" selection-start-line="280" selection-start-column="19" selection-end-line="280" selection-end-column="19" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,9 +599,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -558,10 +612,10 @@
           <caret line="235" column="28" lean-forward="true" selection-start-line="235" selection-start-column="28" selection-end-line="235" selection-end-column="28" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -571,9 +625,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -584,15 +638,15 @@
           <caret line="272" column="24" lean-forward="false" selection-start-line="272" selection-start-column="24" selection-end-line="272" selection-end-column="24" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Apriori.py">
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -602,40 +656,48 @@
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/38055659/_collections.py" />
     <entry file="file://$USER_HOME$/.PyCharm2017.2/system/python_stubs/38055659/time.py" />
     <entry file="file://$PROJECT_DIR$/Apriori_Ver2.py" />
+    <entry file="file://$PROJECT_DIR$/FP-Growth.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3309">
+          <caret line="92" column="16" lean-forward="true" selection-start-line="92" selection-start-column="16" selection-end-line="92" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#36#0" expanded="false" />
+            <element signature="e#7723#8454#0" expanded="false" />
+            <element signature="e#8479#9139#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Apriori_HT.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="300" column="41" lean-forward="true" selection-start-line="278" selection-start-column="4" selection-end-line="300" selection-end-column="41" />
+        <state relative-caret-position="779">
+          <caret line="339" column="39" lean-forward="false" selection-start-line="339" selection-start-column="39" selection-end-line="339" selection-end-column="39" />
           <folding>
             <element signature="e#0#16#0" expanded="false" />
-            <element signature="e#5463#6259#0" expanded="false" />
-            <element signature="e#6295#6761#0" expanded="false" />
-            <element signature="e#8078#8809#0" expanded="false" />
-            <element signature="e#8832#9492#0" expanded="false" />
+            <element signature="e#5474#6270#0" expanded="false" />
+            <element signature="e#6306#6772#0" expanded="false" />
+            <element signature="e#8302#9033#0" expanded="false" />
+            <element signature="e#9056#9716#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Apriori_mod.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="277">
+          <caret line="380" column="21" lean-forward="true" selection-start-line="380" selection-start-column="21" selection-end-line="380" selection-end-column="21" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Apriori.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="354" column="4" lean-forward="true" selection-start-line="354" selection-start-column="4" selection-end-line="355" selection-end-column="8" />
+        <state relative-caret-position="261">
+          <caret line="161" column="48" lean-forward="true" selection-start-line="161" selection-start-column="48" selection-end-line="161" selection-end-column="48" />
           <folding>
             <element signature="e#2#13#0" expanded="true" />
-            <element signature="e#8308#9039#0" expanded="false" />
-            <element signature="e#9062#9722#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FP-Growth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-655">
-          <caret line="164" column="31" lean-forward="true" selection-start-line="164" selection-start-column="31" selection-end-line="164" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-            <element signature="e#7690#8421#0" expanded="false" />
-            <element signature="e#8446#9106#0" expanded="false" />
+            <element signature="e#3361#4092#0" expanded="false" />
+            <element signature="e#4117#4777#0" expanded="false" />
           </folding>
         </state>
       </provider>
