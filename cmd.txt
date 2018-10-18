@@ -1,0 +1,3 @@
+cd D:\MyBox\½Òµ{\¸ê®Æ±´°É\Project1
+D:
+"IBM Quest Data Generator.exe" lit -ntrans 1 -tlen 5 -nitems 50 -npats 500 -patlen 3

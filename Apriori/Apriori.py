@@ -21,49 +21,48 @@ class Apriori(object):
 		""" Run the apriori algorithm, return the frequent *-term sets.
 		"""
 		# Initialize some variables to hold the tmp result
-		transListSet = data  # get transactions (list that contain sets)
+		transListSet = data  # 取得transaction list
 		itemSet = self.getOneItemSet(transListSet)  # get 1-item set
-		itemCountDict = defaultdict(int)  # key=candiate k-item(k=1/2/...), value=count
-		freqSet = dict()  # a dict store all frequent *-items set
+		itemCountDict = defaultdict(int)  # key=candiate k-item(k=1/2/...), value=count ,為不存在的 key 設定預設值int
+		freqSet = dict()  # 儲存所有的 frequent *-items set
 
 		self.transLength = len(transListSet)  # number of transactions
 		self.itemSet = itemSet
 
 		# Get the frequent 1-term set
-		freqOneTermSet = self.getItemsWithMinSupp(transListSet, itemSet,
-												  itemCountDict, self.minSupp)
+		freqOneTermSet = self.getItemsWithMinSupp(transListSet, itemSet, itemCountDict, self.minSupp)  # L1
 
 		# Main loop
 		k = 1
-		currFreqTermSet = freqOneTermSet
-		while currFreqTermSet != set():
-			freqSet[k] = currFreqTermSet  # save the result
-			k += 1
+		currFreqTermSet = freqOneTermSet  # 當前從L1開始計算
+		while currFreqTermSet != set():  # 假設當前Lk不為空則迭代進行計算
+			freqSet[k] = currFreqTermSet  # 儲存Lk items set
+			k += 1  # k提升一階
 			currCandiItemSet = self.getJoinedItemSet(currFreqTermSet, k)  # get new candiate k-terms set
-			currFreqTermSet = self.getItemsWithMinSupp(transListSet, currCandiItemSet,
-													   itemCountDict, self.minSupp)  # frequent k-terms set
+			# get new frequent k-terms set
+			currFreqTermSet = self.getItemsWithMinSupp(transListSet, currCandiItemSet,itemCountDict, self.minSupp)
 
 		#
-		self.itemCountDict = itemCountDict  # 所有候選項以及出現的次數(不僅僅是頻繁項),用來計算置信度啊
-		self.freqSet = freqSet  # Only frequent items(a dict: freqSet[1] indicate frequent 1-term set )
+		self.itemCountDict = itemCountDict  # 儲存所有候選項以及出現的次數(不僅僅是頻繁項),用來計算置信度
+		self.freqSet = freqSet  # dict: freqSet[k] indicate frequent k-term set Lk)
 		return itemCountDict, freqSet
 
 	def getSpecRules(self, rhs):
 		""" Specify a right item, construct rules for it
 		"""
-		if rhs not in self.itemSet:
+		if rhs not in self.itemSet: # rhs: L1中的某一個item
 			print('Please input a term contain in the term-set !')
 			return None
 
 		rules = dict()
-		for key, value in self.freqSet.items():
-			for item in value:
-				if rhs.issubset(item) and len(item) > 1:
-					item_supp = self.getSupport(item)
-					item = item.difference(rhs)
-					conf = item_supp / self.getSupport(item)
+		for key, value in self.freqSet.items(): #從所有的frequent items set中尋找
+			for itemSet in value:
+				if rhs.issubset(itemSet) and len(itemSet) > 1: #假設rhs是屬於frequent itemset 中的子集，且該itemSet長度大於1
+					item_supp = self.getSupport(itemSet) #取得該itemSet的support值
+					itemSet = itemSet.difference(rhs) #取得該itemSet中的parent itemSet
+					conf = item_supp / self.getSupport(itemSet) # cond = sup(itemSet) / sup(parent itemSet)
 					if conf >= self.minConf:
-						rules[item] = conf
+						rules[itemSet] = conf # 符合最小confidence值集加入規則
 		return rules
 
 	def getSupport(self, item):
@@ -75,14 +74,13 @@ class Apriori(object):
 		""" Generate new k-terms candiate itemset"""
 		return set([term1.union(term2) for term1 in termSet for term2 in termSet
 					if len(term1.union(term2)) == k])
+		# 取Lk-1中的集合元素，兩兩互配形成Ck
 
 	def getOneItemSet(self, transListSet):
-		""" Get unique 1-item set in `set` format
-		"""
 		itemSet = set()
 		for line in transListSet:
 			for item in line:
-				itemSet.add(frozenset([item]))
+				itemSet.add(frozenset([item]))  # 一一取出並納入集合中
 		return itemSet
 
 	def getItemsWithMinSupp(self, transListSet, itemSet, freqSet, minSupp):
@@ -91,14 +89,15 @@ class Apriori(object):
 		itemSet_ = set()
 		localSet_ = defaultdict(int)
 		for item in itemSet:
-			freqSet[item] += sum([1 for trans in transListSet if item.issubset(trans)])
-			localSet_[item] += sum([1 for trans in transListSet if item.issubset(trans)])
+			# 統計items在每筆transaction的出現次數(C1,...Cn)
+			freqSet[item] += sum([1 for trans in transListSet if item.issubset(trans)])  # 納入frequent itemset集合
+			localSet_[item] += sum([1 for trans in transListSet if item.issubset(trans)])  # 納入local frequent itemset集合
 
 		# Only conserve frequent item-set
-		n = len(transListSet)
+		n = len(transListSet)  # 取得Transaction Set長度以計算support
 		for item, cnt in localSet_.items():
 			# itemSet_.add(item) if float(cnt) / n >= minSupp else None
-			itemSet_.add(item) if float(cnt) >= minSupp else None
+			itemSet_.add(item) if float(cnt) >= minSupp else None  # 統計符合minSupp的frequent items(L1,...Ln)
 
 		return itemSet_
 
